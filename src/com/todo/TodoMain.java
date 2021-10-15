@@ -26,11 +26,15 @@ public class TodoMain {
 			case "add":
 				TodoUtil.createItem(l);
 				break;
-			
+
 			case "del":
 				TodoUtil.deleteItem(l);
 				break;
 				
+			case "del_multi":
+				TodoUtil.deleteMultiItem(l);
+				break;
+			
 			case "edit":
 				TodoUtil.updateItem(l);
 				break;
@@ -57,9 +61,25 @@ public class TodoMain {
 				int comp = sc.nextInt();
 				TodoUtil.completeItem(l,comp);
 				break;
+				
+			case "comp_multi":
+				TodoUtil.completeMultiItem(l);
+				break;
 
+			case "date":
+				TodoUtil.dateSchedule(l);
+				break;
+				
 			case "ls_comp":
-				TodoUtil.listAll(l, "is_completed", 1);
+				TodoUtil.listComp(l);
+				break;
+				
+			case "ls_importance":
+				TodoUtil.listAll(l, "importance", 0);
+				break;
+				
+			case "ls_importance_desc":
+				TodoUtil.listAll(l, "importance", 1);
 				break;
 				
 			case "ls_name":
